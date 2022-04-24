@@ -1,6 +1,3 @@
-// import { describe, it, expect } from './libs/mocha';
-// import calculatePrice from '../price-calculator';
-
 describe('priceCalculator', () => {
   describe('private user', () => {
     it('should calculate new product published today correctly', () => {

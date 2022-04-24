@@ -2,33 +2,25 @@
 // productType, 0 = new product, 1 = old product
 // price, the price of the product
 const calculatePrice = (userType, productType, price, publishedDate) => {
+  // if (userType)
   try {
-    switch (userType) {
-      case 0: // normal
-        if (productType === 0) { // new product
-          let enddateDiscount = 0;
-          if (publishedDate.toDateString() === new Date().toDateString()) enddateDiscount = 10;
+    const today = new Date().toDateString();
+    let rebateAmount = 0;
+    let productTypePrice = 35; // Old product price
 
-          return price + 25 - enddateDiscount;
-        } if (productType === 1) { // old product
-          return price + 35 - 0;
-        }
-        break;
-      case 1: // company
-        if (productType === 0) { // new product
-          if (publishedDate.toDateString() === new Date().toDateString()) {
-            return price + 25 - 15;// Enddate discount and company discount
-          }
-
-          return price + 25 - 5;// Only company discount
-        } if (productType === 1) { // old product
-          return price + 35 - 5;
-        }
-        break;
-      default: return 'User type was not found';
+    if (productType === 0) { // New product
+      if (publishedDate.toDateString() === today) { // Published today
+        rebateAmount = 10; // Add 10 rebate amount
+      }
+      productTypePrice -= 10; // Subtract 10 from old product price
     }
+
+    if (userType === 1) { // Company user
+      rebateAmount += 5; // Add 5 company rebate amount
+    }
+
+    return price + productTypePrice - rebateAmount;
   } catch (ex) {
-    console.error(ex);
+    throw new Error(ex);
   }
-  return 0;
 };
