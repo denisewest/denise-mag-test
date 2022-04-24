@@ -15,6 +15,11 @@ describe('priceCalculator', () => {
       const actual = calculatePrice(0, 1, 1, new Date());
       expect(expected).to.equal(actual);
     });
+    it('should calculate old product as enum published today correctly', () => {
+      const expected = 40;
+      const actual = calculatePrice(0, ProductTypes.Old, 5, new Date());
+      expect(expected).to.equal(actual);
+    });
   });
 
   describe('company user', () => {

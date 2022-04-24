@@ -20,32 +20,28 @@ const ProductTypes = Object.freeze({
  * @returns {number} the current price of a product
  */
 const calculatePrice = (userType, productType, price, publishedDate) => {
-  try {
-    if (!Object.values(UserTypes).includes(userType)) {
-      throw new Error('Invalid user type.');
-    }
-
-    if (!Object.values(ProductTypes).includes(productType)) {
-      throw new Error('Invalid product type.');
-    }
-
-    const today = new Date().toDateString();
-    let rebateAmount = 0;
-    let productTypePrice = 35; // Old product price
-
-    if (productType === ProductTypes.New) {
-      if (publishedDate.toDateString() === today) { // Published today
-        rebateAmount = 10; // Add 10 rebate amount
-      }
-      productTypePrice -= 10; // Subtract 10 from old product price
-    }
-
-    if (userType === UserTypes.Company) {
-      rebateAmount += 5; // Add 5 company rebate amount
-    }
-
-    return price + productTypePrice - rebateAmount;
-  } catch (ex) {
-    throw new Error(ex);
+  if (!Object.values(UserTypes).includes(userType)) {
+    throw new Error('Invalid user type.');
   }
+
+  if (!Object.values(ProductTypes).includes(productType)) {
+    throw new Error('Invalid product type.');
+  }
+
+  const today = new Date().toDateString();
+  let rebateAmount = 0;
+  let productTypePrice = 35; // Old product price
+
+  if (productType === ProductTypes.New) {
+    if (publishedDate.toDateString() === today) { // Published today
+      rebateAmount = 10; // Add 10 rebate amount
+    }
+    productTypePrice -= 10; // Subtract 10 from old product price
+  }
+
+  if (userType === UserTypes.Company) {
+    rebateAmount += 5; // Add 5 company rebate amount
+  }
+
+  return price + productTypePrice - rebateAmount;
 };
