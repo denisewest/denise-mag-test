@@ -45,3 +45,5 @@ const calculatePrice = (userType, productType, price, publishedDate) => {
 
   return price + productTypePrice - rebateAmount;
 };
+
+export default calculatePrice;
