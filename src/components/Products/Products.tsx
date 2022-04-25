@@ -7,7 +7,26 @@ import './Products.css'
 
 function Products() {
   const [userData, setUserData] = useState<User>(User.Normal)
+  const [totalPrice, setTotalPrice] = useState<Map<string, number>>(new Map<string, number>())
+
   const products = getProducts()
+
+  const updateTotalPrice = (key: string, value: number) => {
+    const changedTotal = totalPrice.set(key, value)
+    setTotalPrice(new Map(changedTotal))
+  }
+
+  console.log('totalPrice ', totalPrice)
+
+  const calculateTotalPrice = (): number => {
+    console.log(totalPrice.values())
+    const total = Array.from(totalPrice.values()).reduce(
+      (previousValue: number, currentValue: number) => previousValue + currentValue, 0
+      )
+      console.log(total)
+      return total
+  }
+
   return (
     <div>
       <div id='usercontainer'>
@@ -20,12 +39,16 @@ function Products() {
         <legend>Products</legend>
           {products.map((product) => {
             return (
-            <div>
-              <ProductItem product={product} user={userData} />
+            <div key={product.name}>
+              <ProductItem product={product} user={userData} totalProductPrice={(price) => {
+                updateTotalPrice(product.name, price)
+                
+              }} />
             </div>
             )
           })}
         </fieldset>
+        <h5>Total: {calculateTotalPrice()}</h5>
       </div>
     </div>
   )

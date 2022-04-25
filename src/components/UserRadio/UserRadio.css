@@ -7,7 +7,6 @@
 }
 
 #radio-container {
-  background-color: #E3ECEE;
   margin-bottom: 1rem;
   padding: 0.3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -42,7 +41,7 @@
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: lightgrey;
+  background-color: #fff;
   border-radius: 50%;
 }
 

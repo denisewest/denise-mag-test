@@ -1,20 +1,16 @@
 .App {
   text-align: center;
-  background-color: #f1fcff;
+  background-color: #f4accd;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #434D49;
+  color: #26358c;
 }
 
 fieldset {
   border-radius: 0.15rem;
-  border: 1px solid #c7c7c7;
-}
-
-legend {
-  color: #c7c7c7;
+  border: 1px solid #fff;
 }
