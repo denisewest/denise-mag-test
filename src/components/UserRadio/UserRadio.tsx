@@ -2,7 +2,11 @@ import { useState } from 'react'
 import User from '../../models/user'
 import './UserRadio.css'
 
-function UserToggle() {
+interface UserToggleProps {
+  onToggleChange: (user: User) => void
+}
+
+function UserToggle(props: UserToggleProps) {
   const [checkedUser, setCheckedUser] = useState<User>(User.Normal)
   
   return (
@@ -18,7 +22,8 @@ function UserToggle() {
                 value={User.Normal} 
                 checked={checkedUser == User.Normal} 
                 onChange={() => {
-                  setCheckedUser(User.Normal)
+                  setCheckedUser(User.Normal) 
+                  props.onToggleChange(User.Normal)
                 }}
               />
               <span className='checkmark'></span>
@@ -33,6 +38,7 @@ function UserToggle() {
                 checked={checkedUser == User.Company} 
                 onChange={() => {
                   setCheckedUser(User.Company)
+                  props.onToggleChange(User.Company)
                 }}
               />
               <span className='checkmark'></span>
