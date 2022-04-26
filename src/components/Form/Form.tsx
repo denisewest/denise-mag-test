@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
-import './Form.css'
 import Product from '../../models/product'
+import './Form.css'
 
 interface FormProps {
   onAddProduct: (product: Product) => void

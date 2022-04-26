@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import './ProductItem.css'
 import Product from '../../models/product'
 import User from '../../models/user'
 import calculatePrice from '../../../refactor/price-calculator'
+import './ProductItem.css'
 
 interface ProductItemProps {
   product: Product

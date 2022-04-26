@@ -7,6 +7,7 @@ interface UserToggleProps {
 }
 
 function UserToggle(props: UserToggleProps) {
+  const { onToggleChange } = props
   const [checkedUser, setCheckedUser] = useState<User>(User.Normal)
   
   return (
@@ -21,7 +22,7 @@ function UserToggle(props: UserToggleProps) {
               checked={checkedUser == User.Normal} 
               onChange={() => {
                 setCheckedUser(User.Normal) 
-                props.onToggleChange(User.Normal)
+                onToggleChange(User.Normal)
               }}
             />
             <span className='checkmark'></span>
@@ -36,7 +37,7 @@ function UserToggle(props: UserToggleProps) {
               checked={checkedUser == User.Company} 
               onChange={() => {
                 setCheckedUser(User.Company)
-                props.onToggleChange(User.Company)
+                onToggleChange(User.Company)
               }}
             />
             <span className='checkmark'></span>

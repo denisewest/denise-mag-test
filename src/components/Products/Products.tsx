@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './Products.css'
 import getProducts from '../../utils/get-products'
 import Product from '../../models/product'
 import ProductItem from '../ProductItem/ProductItem'
 import Form from '../Form/Form'
 import UserRadio from '../UserRadio/UserRadio'
 import User from '../../models/user'
+import './Products.css'
 
 function Products() {
   const [userData, setUserData] = useState<User>(User.Normal)
@@ -39,7 +39,6 @@ function Products() {
             <div key={product.name}>
               <ProductItem product={product} user={userData} totalProductPrice={(price) => {
                 updateTotalPrice(product.name, price)
-                
               }} />
             </div>
             )

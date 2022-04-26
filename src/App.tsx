@@ -1,6 +1,6 @@
-import './App.css'
 import Title from './components/Title/Title'
 import Products from './components/Products/Products'
+import './App.css'
 
 function App() {
   return (
