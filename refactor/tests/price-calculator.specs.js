@@ -1,3 +1,5 @@
+import calculatePrice, { ProductTypes } from '../price-calculator';
+
 describe('priceCalculator', () => {
   describe('private user', () => {
     it('should calculate new product published today correctly', () => {

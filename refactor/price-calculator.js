@@ -47,3 +47,4 @@ const calculatePrice = (userType, productType, price, publishedDate) => {
 };
 
 export default calculatePrice;
+export { ProductTypes };
