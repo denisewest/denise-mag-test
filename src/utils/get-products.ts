@@ -23,14 +23,7 @@ const getProducts = (): Product[] => {
     publishedDate: new Date('2022-04-23')
   }
 
-  const tomato: Product = {
-    name: 'Tomato',
-    type: 1,
-    price: 1,
-    publishedDate: new Date('2022-01-01')
-  }
-
-  return [banana, strawberry, mango, tomato]
+  return [banana, strawberry, mango]
 }
 
 export default getProducts

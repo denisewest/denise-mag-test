@@ -35,17 +35,22 @@ function ProductItem(props: ProductItemProps) {
   return (
     <div className='item-container'>
       <div className='button-container'>
+        <h5>{product.name}</h5>
+        <div className='counter-container'>
         <button type='button' className='button' onClick={() => {
-          decreaseCount()
-          }}>-</button>
-        <h5>{product.name} <br/> {count}</h5>
+            setCount(count + 1)
+            }}>+</button>
+        <p>{count}</p>
         <button type='button' className='button' onClick={() => {
-          setCount(count + 1)
-          }}>+</button>
+            decreaseCount()
+            }}>-</button>
+        </div>
       </div>
       <div className='unit-container'>
-        <p>Unit price: {pricePerUnit()} SEK</p>
-        <p>Total price: {getTotalProductPrice()} SEK</p>
+        <div className='price-container'>
+          <p>Unit price {pricePerUnit()} SEK</p>
+          <p>Total price {getTotalProductPrice()} SEK</p>
+        </div>
       </div>
     </div>
   )

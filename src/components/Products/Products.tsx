@@ -28,15 +28,13 @@ function Products() {
   }
 
   return (
-    <div>
-      <div id='usercontainer'>
+    <div id='calculator-container'>
+      <div id='user-container'>
         <UserRadio onToggleChange={(user) => {
             setUserData(user)
           }} />
       </div>
       <div id='products-container'>
-        <fieldset>
-        <legend>Products</legend>
           {products.map((product) => {
             return (
             <div key={product.name}>
@@ -47,8 +45,7 @@ function Products() {
             </div>
             )
           })}
-        </fieldset>
-        <h5>Total: {calculateTotalPrice()}</h5>
+        <h5>Your total {calculateTotalPrice()} SEK</h5>
       </div>
     </div>
   )

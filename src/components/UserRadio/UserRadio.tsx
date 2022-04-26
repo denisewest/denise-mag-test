@@ -11,41 +11,38 @@ function UserToggle(props: UserToggleProps) {
   
   return (
     <div id='user-container'>
-      <fieldset>
-        <legend>User</legend>
-        <div id='radio-container'>
-          <p>
-            <label className='radio-label'>
-              <input 
-                type='radio' 
-                name='user' 
-                value={User.Normal} 
-                checked={checkedUser == User.Normal} 
-                onChange={() => {
-                  setCheckedUser(User.Normal) 
-                  props.onToggleChange(User.Normal)
-                }}
-              />
-              <span className='checkmark'></span>
-            {User[User.Normal]}</label>
-          </p>
-          <p>
-            <label className='radio-label'>
-              <input 
-                type='radio' 
-                name='user' 
-                value={User.Company} 
-                checked={checkedUser == User.Company} 
-                onChange={() => {
-                  setCheckedUser(User.Company)
-                  props.onToggleChange(User.Company)
-                }}
-              />
-              <span className='checkmark'></span>
-            {User[User.Company]}</label>
-          </p>
-        </div>
-      </fieldset>
+      <div id='radio-container'>
+        <h6>
+          <label className='radio-label'>
+            <input 
+              type='radio' 
+              name='user' 
+              value={User.Normal} 
+              checked={checkedUser == User.Normal} 
+              onChange={() => {
+                setCheckedUser(User.Normal) 
+                props.onToggleChange(User.Normal)
+              }}
+            />
+            <span className='checkmark'></span>
+          {User[User.Normal]} user</label>
+        </h6>
+        <h6>
+          <label className='radio-label'>
+            <input 
+              type='radio' 
+              name='user' 
+              value={User.Company} 
+              checked={checkedUser == User.Company} 
+              onChange={() => {
+                setCheckedUser(User.Company)
+                props.onToggleChange(User.Company)
+              }}
+            />
+            <span className='checkmark'></span>
+          {User[User.Company]} user</label>
+        </h6>
+      </div>
     </div>
   )
 }

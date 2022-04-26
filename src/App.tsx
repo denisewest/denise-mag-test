@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Title from './components/Title/Title'
 import Products from './components/Products/Products'
