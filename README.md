@@ -1,4 +1,9 @@
 # MAG Interactive take home test web frontend
+## NOTE
+Hello!
+I made some changes, so before running the tests in this solution, you'd probably need to install mocha and expect.js by ```npm i expect.js``` and ````npm i mocha```
+// Denise
+## END OF NOTE
 
 ## Hi there! 👋
 
