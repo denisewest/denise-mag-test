@@ -1,18 +1,11 @@
-.user-container {
-  display: flex;
-  justify-content: center;
-  width: 80%;
+#user-container {
+  margin: 0.3rem;
 }
 
-.radio-container {
-  text-align: left;
-  
-}
-
-.radio-container h6 {
+#radio-container h6 {
   cursor: pointer;
 }
 
-.radio-label input {
+#radio-label input {
   cursor: pointer;
 }

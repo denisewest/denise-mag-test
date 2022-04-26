@@ -1,6 +1,6 @@
-enum UserTypes {
+enum User {
   Normal = 0,
   Company = 1,
 }
 
-export default UserTypes
+export default User

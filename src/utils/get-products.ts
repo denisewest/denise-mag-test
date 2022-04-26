@@ -9,8 +9,8 @@ const getProducts = (): Product[] => {
     publishedDate: new Date('2021-12-10'),
   }
 
-  const strawberry: Product = {
-    name: 'Strawberry',
+  const peach: Product = {
+    name: 'Peach',
     type: 0,
     price: 2,
     publishedDate: new Date()
@@ -23,7 +23,7 @@ const getProducts = (): Product[] => {
     publishedDate: new Date('2022-04-23')
   }
 
-  return [banana, strawberry, mango]
+  return [banana, peach, mango]
 }
 
 export default getProducts

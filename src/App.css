@@ -16,6 +16,10 @@
   font-family: 'Fredoka One', cursive;
 }
 
+.App h4 {
+  margin: 0rem;
+}
+
 .App h5 {
   margin: 0rem;
 }

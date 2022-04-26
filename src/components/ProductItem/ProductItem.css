@@ -1,12 +1,21 @@
 .item-container {
   display: flex;
-  margin: 0.6rem;
+  flex-direction: column;
+  margin: 0.3rem 0.3rem 0.3rem 0.6rem;
+  padding: 0.6rem;
   border: 2px solid #fff;
   border-radius: 0.5rem;
 }
 
 .button-container {
-  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .button {
@@ -15,7 +24,6 @@
   border: 3px solid #26358c;
   text-align: center;
   text-decoration: none;
-  padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   transition-duration: 0.5s;
   margin: 0.3rem;

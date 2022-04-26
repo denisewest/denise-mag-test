@@ -28,19 +28,19 @@ function Form(props: FormProps) {
 
   return (
     <div id='form'>
-      <h6>Add product</h6>
+      <h5>Add product</h5>
       <form method='post' autoComplete='off'>
         <label htmlFor='name'>Product name</label>
-        <input type='text' id='name' required onChange={e => setProductName(e.target.value)} /><br/>
+        <input type='text' id='name' required onChange={e => setProductName(e.target.value)} />
+        <label htmlFor='price'>Product price</label>
+        <input type='number' id='price' min='0' required onChange={e => setProductPrice(Number(e.target.value))}/>
+        <label htmlFor='date'>Published date</label>
+        <input type='date' id='date' required onChange={e => setPublishedDate(e.target.value)}/>
         <label htmlFor='type'>Product type</label>
         <select onChange={e => setProductType(Number(e.target.value))}>
           <option value='0' className='type'>New</option>
           <option value='1' className='type'>Old</option>
-        </select><br/>
-        <label htmlFor='price'>Price</label>
-        <input type='number' id='price' min='0' required onChange={e => setProductPrice(Number(e.target.value))}/><br/>
-        <label htmlFor='date'>Published date</label>
-        <input type='date' id='date' required onChange={e => setPublishedDate(e.target.value)}/><br/>
+        </select>
         <input onClick={submitValues} type='submit' className='button' value='Add' />
       </form>
     </div>

@@ -38,12 +38,12 @@ function ProductItem(props: ProductItemProps) {
         <h5>{product.name}</h5>
         <div className='counter-container'>
         <button type='button' className='button' onClick={() => {
-            setCount(count + 1)
-            }}>+</button>
-        <p>{count}</p>
-        <button type='button' className='button' onClick={() => {
             decreaseCount()
             }}>-</button>
+        <p>{count}</p>
+        <button type='button' className='button' onClick={() => {
+            setCount(count + 1)
+            }}>+</button>
         </div>
       </div>
       <div className='unit-container'>

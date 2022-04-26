@@ -1,11 +1,16 @@
 #calculator-container {
-  width: 40%;
   border: 3px solid #fff;
   border-radius: 0.5rem;
-}
-
-#user-container {
+  display: flex;
+  flex-direction: column;
 }
 
 #products-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#items-container {
+  display: flex;
+  flex-direction: column;
 }

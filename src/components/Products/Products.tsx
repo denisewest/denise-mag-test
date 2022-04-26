@@ -31,7 +31,9 @@ function Products() {
             setUserData(user)
           }} />
       </div>
+      <h4>Your total {calculateTotalPrice()} SEK</h4>
       <div id='products-container'>
+        <div id='items-container'>
           {products.map((product) => {
             return (
             <div key={product.name}>
@@ -42,12 +44,14 @@ function Products() {
             </div>
             )
           })}
-        <h5>Your total {calculateTotalPrice()} SEK</h5>
-        <Form onAddProduct={(product) => {
-          const currentProducts = Array.from(products)
-          currentProducts.push(product)
-          setProducts(currentProducts)
-        }} />
+        </div>
+        <div id='form-container'>
+          <Form onAddProduct={(product) => {
+            const currentProducts = Array.from(products)
+            currentProducts.push(product)
+            setProducts(currentProducts)
+          }} />
+        </div>
       </div>
     </div>
   )
